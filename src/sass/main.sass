@@ -1,0 +1,57 @@
+.v-main
+  display: flex
+  justify-content: center
+  align-items: center
+  background: linear-gradient(45deg, #FFAAA7, #F1F7B5, #A8D1D1, #9EA1D4)
+  background-size: 300% 300%
+  animation: gradient 30s ease infinite
+  .v-container
+    max-width: 800px
+  .v-container#bgm
+    background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('@/assets/study.gif')
+    background-size: 50%
+    background-position: 50% 80%
+    mix-blend-mode: multiply
+    position: relative
+    top: 30px
+    .currentText
+      color:#9a9a9a
+      .v-col
+        display: flex
+        justify-content: center
+        .v-card
+          color:#9a9a9a
+          display: flex
+          align-items: center
+    #colTime
+      height: 300px
+      display: flex
+      justify-content: center
+      align-items: center
+  .v-theme--light
+    background: none
+    surface: none
+.v-theme--light
+    background: none
+    surface: none
+.hometext
+  color: #464646
+  text-shadow: 1px 1px 2px white, 0 0 1em white, 0 0 0.2em grey
+.v-theme--light
+  surface: none
+  #tomato
+    padding: 6px
+
+#alarm_name
+  padding: 0 35px 0 10px
+.flex-grow-1
+  padding: 20px 0px 0px 0px
+
+
+@keyframes gradient
+  0%
+    background-position: 0% 50%
+  50%
+    background-position: 100% 50%
+  100%
+    background-position: 0% 50%

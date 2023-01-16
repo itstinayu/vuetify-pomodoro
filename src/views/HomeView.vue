@@ -1,14 +1,16 @@
 <template lang="pug">
-v-row#home
-  v-col(cols="12")
-    h1 {{ currentText }}
-    h1 {{ currentTime }}
-  v-col(cols="12")
-    v-btn(v-if="status !== 1" icon="mdi-play" variant="text" @click="startTimer")
-    v-btn(v-if="status === 1" icon="mdi-pause" variant="text" @click="pauseTimer")
-    v-btn(v-if="currentItem.length > 0" icon="mdi-skip-next" variant="text" @click="finishTimer")
+v-container#bgm
+  v-row#home
+    v-col(cols="12" class="currentText")
+      h1.text-center(class="hometext") {{ currentText }}
+    v-col(cols="12" class="text-h1")
+      v-card#colTime(class="pa-10")
+        h1.text-center(class="hometext") {{ currentTime }}
+    v-col.text-center(cols="12" style="text-center")
+      v-btn(v-if="status !== 1" icon="mdi-play" variant="outlined" color="red lighten-2" @click="startTimer")
+      v-btn(v-if="status === 1" icon="mdi-pause" variant="outlined" color="red lighten-2" @click="pauseTimer")
+      v-btn(v-if="currentItem.length > 0" class="ms-6" icon="mdi-skip-next" variant="outlined" color="red lighten-2" @click="finishTimer")
 </template>
-
 <script setup>
 import { ref, computed } from 'vue'
 import { useListStore } from '@/stores/list'
@@ -71,6 +73,6 @@ const currentText = computed(() => {
 const currentTime = computed(() => {
   const m = Math.floor(timeleft.value / 60).toString().padStart(2, '0')
   const s = (timeleft.value % 60).toString().padStart(2, '0')
-  return m + ':' + s
+  return m + ' : ' + s
 })
 </script>
